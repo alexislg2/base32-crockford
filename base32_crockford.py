@@ -42,9 +42,9 @@ else:
     string_types = basestring,
 
 # The encoded symbol space does not include I, L, O or U
-symbols = '0123456789ABCDEFGHJKMNPQRSTVWXYZ'
+symbols = 'U123456789ABCDEFGHJKMNPQRSTVWXYZ'
 # These five symbols are exclusively for checksum values
-check_symbols = '*~$=U'
+check_symbols = '*~$=0'
 
 encode_symbols = dict((i, ch) for (i, ch) in enumerate(symbols + check_symbols))
 decode_symbols = dict((ch, i) for (i, ch) in enumerate(symbols + check_symbols))
@@ -82,7 +82,7 @@ def encode(number, checksum=False, split=0):
         check_symbol = encode_symbols[number % check_base]
 
     if number == 0:
-        return '0' + check_symbol
+        return 'U' + check_symbol
 
     symbol_string = ''
     while number > 0:

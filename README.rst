@@ -1,6 +1,8 @@
 base32-crockford
 ================
 
+Warning: this is a fork. 0 and U have been interverted to avoid to have 0 in encoded strings
+
 A Python module implementing the alternate base32 encoding as described
 by Douglas Crockford at: http://www.crockford.com/wrmg/base32.html.
 
